@@ -6,8 +6,6 @@ import('node-fetch').then(module => { fetch = module.default; });
 const cors = require('cors');
 const path = require('path');
 
-
-
 const app = express();
 const port = process.env.PORT || 3002;
 
@@ -26,6 +24,9 @@ const apiLimiter = rateLimit({
     },
     headers: true,
 });
+
+// Apply the rate-limiting middleware to all routes
+app.use(apiLimiter);
 
 
 
