@@ -9,7 +9,7 @@ const path = require('path');
 
 
 const app = express();
-const port = 3002;
+const port = process.env.PORT || 3002;
 
 const apiLimiter = rateLimit({
     windowMs: 10 * 60 * 1000, // 10 minutes
@@ -89,6 +89,6 @@ app.post('/generate', async (req, res) => {
 
     res.json({ generatedText: content });
 });
-app.listen(port, 'localhost', () => {
-    console.log(`Server running at http://localhost:${port}/`);
+app.listen(port, () => {
+    console.log(`Server running on port ${port}`);
 });
