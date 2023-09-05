@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+   
+    <meta charset="UTF-8">
+    <title>The AI That Writes Just Like You — Literally</title>
+    <div id="loader">
+        <div class="macbook">
+            <div class="inner">
+              <div class="screen">
+                <div class="face-one">
+                  <div class="camera"></div>
+                  <div class="display">
+                    <div class="shade"></div>
+                  </div>
+                  <span>MacBook Air</span>
+                </div>
+                <img src="http://www.clker.com/cliparts/i/s/H/f/4/T/apple-logo-white.svg" class="logo" />
+              </div>
+              <div class="body">
+                <div class="face-one">
+                  <div class="touchpad">
+                  </div>
+                  <div class="keyboard">
+                    <div class="key"></div>
+                    <div class="key"></div>
+                    <div class="key"></div>
+                    <div class="key"></div>
+                    <div class="key"></div>
+                    <div class="key space"></div>
+                    <div class="key"></div>
+                    <div class="key"></div>
+                    <div class="key"></div>
+                    <div class="key"></div>
+                    <div class="key"></div>
+                    <div class="key"></div>
+                    <div class="key"></div>
+                    <div class="key"></div>
+                    <div class="key"></div>
+                    <div class="key"></div>
+                    <div class="key"></div>
+                    <div class="key"></div>
+                    <div class="key"></div>
+                    <div class="key"></div>
+                    <div class="key"></div>
+                    <div class="key"></div>
+                    <div class="key"></div>
+                    <div class="key"></div>
+                    <div class="key"></div>
+                    <div class="key"></div>
+                    <div class="key"></div>
+                    <div class="key"></div>
+                    <div class="key"></div>
+                    <div class="key"></div>
+                    <div class="key"></div>
+                    <div class="key"></div>
+                    <div class="key"></div>
+                    <div class="key"></div>
+                    <div class="key"></div>
+                    <div class="key"></div>
+                    <div class="key"></div>
+                    <div class="key"></div>
+                    <div class="key"></div>
+                    <div class="key"></div>
+                    <div class="key"></div>
+                    <div class="key"></div>
+                    <div class="key"></div>
+                    <div class="key"></div>
+                    <div class="key"></div>
+                    <div class="key"></div>
+                    <div class="key"></div>
+                    <div class="key"></div>
+                    <div class="key"></div>
+                    <div class="key"></div>
+                    <div class="key"></div>
+                    <div class="key"></div>
+                    <div class="key"></div>
+                    <div class="key"></div>
+                    <div class="key"></div>
+                    <div class="key"></div>
+                    <div class="key"></div>
+                    <div class="key"></div>
+                    <div class="key"></div>
+                    <div class="key f"></div>
+                    <div class="key f"></div>
+                    <div class="key f"></div>
+                    <div class="key f"></div>
+                    <div class="key f"></div>
+                    <div class="key f"></div>
+                    <div class="key f"></div>
+                    <div class="key f"></div>
+                    <div class="key f"></div>
+                    <div class="key f"></div>
+                    <div class="key f"></div>
+                    <div class="key f"></div>
+                    <div class="key f"></div>
+                    <div class="key f"></div>
+                    <div class="key f"></div>
+                    <div class="key f"></div>
+                  </div>
+                </div>
+                <div class="pad one"></div>
+                <div class="pad two"></div>
+                <div class="pad three"></div>
+                <div class="pad four"></div>
+              </div>
+            </div>
+            <div class="shadow"></div>
+          </div>
+    </div>
+    <div id="app-content" style="display: none;">
+    <style>
+    /* General styles */
+
+    .macbook {
+  width: 150px;
+  height: 96px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -75px 0 0 -48px;
+  perspective: 500px;
+}
+.shadow {
+  position: absolute;
+  width: 60px;
+  height: 0px;
+  left: 40px;
+  top: 160px;
+  transform: rotateX(80deg) rotateY(0deg) rotateZ(0deg);
+  box-shadow: 0 0 60px 40px rgba(0,0,0,0.3);
+  animation: shadow infinite 7s ease;
+}
+.inner {
+  z-index: 20;
+  position: absolute;
+  width: 150px;
+  height: 96px;
+  left: 0;
+  top: 0;
+  transform-style: preserve-3d;
+  transform:rotateX(-20deg) rotateY(0deg) rotateZ(0deg);
+  animation: rotate infinite 7s ease;
+}
+.screen {
+  width: 150px;
+  height: 96px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-radius: 7px;
+  background: #ddd;
+  transform-style: preserve-3d;
+  transform-origin: 50% 93px;
+  transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  animation: lid-screen infinite 7s ease;
+  background-image: linear-gradient(45deg, rgba(0,0,0,0.34) 0%,rgba(0,0,0,0) 100%);
+  background-position: left bottom;
+  background-size: 300px 300px;
+  box-shadow: inset 0 3px 7px rgba(255,255,255,0.5);
+}
+.screen .logo {
+  position: absolute;
+  width: 20px;
+  height: 24px;
+  left: 50%;
+  top: 50%;
+  margin: -12px 0 0 -10px;
+  transform: rotateY(180deg) translateZ(0.1px);
+}
+.screen .face-one {
+  width: 150px;
+  height: 96px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-radius: 7px;
+  background: #d3d3d3;
+  transform: translateZ(2px);
+  background-image: linear-gradient(45deg,rgba(0,0,0,0.24) 0%,rgba(0,0,0,0) 100%);
+}
+.screen .face-one .camera {
+  width: 3px;
+  height: 3px;
+  border-radius: 100%;
+  background: #000;
+  position: absolute;
+  left: 50%;
+  top: 4px;
+  margin-left: -1.5px;
+}
+.screen .face-one .display {
+  width: 130px;
+  height: 74px;
+  margin: 10px;
+  background: url("https://upload.wikimedia.org/wikipedia/en/9/98/MacOS_Monterey_Desktop.png") no-repeat center center #000;
+  background-size: 100% 100%;
+  border-radius: 1px;
+  position: relative;
+  box-shadow: inset 0 0 2px rgba(0,0,0,1);
+}
+.screen .face-one .display .shade {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 130px;
+  height: 74px;
+  background: linear-gradient(-135deg, rgba(255,255,255,0) 0%,rgba(255,255,255,0.1) 47%,rgba(255,255,255,0) 48%);
+  animation: screen-shade infinite 7s ease;
+  background-size: 300px 200px;
+  background-position: 0px 0px;
+}
+.screen .face-one span {
+  position: absolute;
+  top: 85px;
+  left: 57px;
+  font-size: 6px;
+  color: #666
+}
+
+.body {
+  width: 150px;
+  height: 96px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-radius: 7px;
+  background: #cbcbcb;
+  transform-style: preserve-3d;
+  transform-origin: 50% bottom;
+  transform: rotateX(-90deg);
+  animation: lid-body infinite 7s ease;
+  background-image: linear-gradient(45deg, rgba(0,0,0,0.24) 0%,rgba(0,0,0,0) 100%);
+}
+.body .face-one {
+  width: 150px;
+  height: 96px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-radius: 7px;
+  transform-style: preserve-3d;
+  background: #dfdfdf;
+  animation: lid-keyboard-area infinite 7s ease;
+  transform: translateZ(-2px);
+  background-image: linear-gradient(30deg, rgba(0,0,0,0.24) 0%,rgba(0,0,0,0) 100%);
+}
+.body .touchpad {
+  width: 40px;
+  height: 31px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 4px;
+  margin: -44px 0 0 -18px;
+  background: #cdcdcd;
+  background-image: linear-gradient(30deg, rgba(0,0,0,0.24) 0%,rgba(0,0,0,0) 100%);
+  box-shadow: inset 0 0 3px #888;
+}
+.body .keyboard {
+width: 130px;
+height: 45px;
+position: absolute;
+left: 7px;
+top: 41px;
+border-radius: 4px;
+transform-style: preserve-3d;
+background: #cdcdcd;
+background-image: linear-gradient(30deg, rgba(0,0,0,0.24) 0%,rgba(0,0,0,0) 100%);
+box-shadow: inset 0 0 3px #777;
+padding: 0 0 0 2px;
+}
+.keyboard .key {
+  width: 6px;
+  height: 6px;
+  background: #444;
+  float: left;
+  margin: 1px;
+  transform: translateZ(-2px);
+  border-radius: 2px;
+  box-shadow: 0 -2px 0 #222;
+  animation: keys infinite 7s ease;
+}
+.key.space {
+  width: 45px;
+}
+.key.f {
+  height: 3px;
+}
+.body .pad {
+  width: 5px;
+  height: 5px;
+  background: #333;
+  border-radius: 100%;
+  position: absolute;
+}
+.pad.one {
+  left: 20px;
+  top: 20px;
+}
+.pad.two {
+  right: 20px;
+  top: 20px;
+}
+.pad.three {
+  right: 20px;
+  bottom: 20px;
+}
+.pad.four {
+  left: 20px;
+  bottom: 20px;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotateX(-20deg) rotateY(0deg) rotateZ(0deg);
+  }
+  5% {
+    transform: rotateX(-20deg) rotateY(-20deg) rotateZ(0deg);
+  }
+  20% {
+    transform: rotateX(30deg) rotateY(200deg) rotateZ(0deg);
+  }
+  25% {
+    transform: rotateX(-60deg) rotateY(150deg) rotateZ(0deg);
+  }
+  60% {
+    transform: rotateX(-20deg) rotateY(130deg) rotateZ(0deg);
+  }
+  65% {
+    transform: rotateX(-20deg) rotateY(120deg) rotateZ(0deg);
+  }
+  80% {
+    transform: rotateX(-20deg) rotateY(375deg) rotateZ(0deg);
+  }
+  85% {
+    transform: rotateX(-20deg) rotateY(357deg) rotateZ(0deg);
+  }
+  87% {
+    transform: rotateX(-20deg) rotateY(360deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(-20deg) rotateY(360deg) rotateZ(0deg);
+  }
+}
+
+@keyframes lid-screen {
+  0% {
+    transform: rotateX(0deg);
+    background-position: left bottom;
+  }
+  5% {
+    transform: rotateX(50deg);
+    background-position: left bottom;
+  }
+  20% {
+    transform: rotateX(-90deg);
+    background-position: -150px top;
+  }
+  25% {
+    transform: rotateX(15deg);
+    background-position: left bottom;
+  }
+  30% {
+    transform: rotateX(-5deg);
+    background-position: right top;
+  }
+  38% {
+    transform: rotateX(5deg);
+    background-position: right top;
+  }
+  48% {
+    transform: rotateX(0deg);
+    background-position: right top;
+  }
+  90% {
+    transform: rotateX(0deg);
+    background-position: right top;
+  }
+  100% {
+    transform: rotateX(0deg);
+    background-position: right center;
+  }
+}
+
+@keyframes lid-body {
+  0% {
+    transform: rotateX(-90deg);
+    
+  }
+  50% {
+    transform: rotateX(-90deg);
+    
+  }
+  100% {
+    transform: rotateX(-90deg);
+    
+  }
+}
+
+@keyframes lid-keyboard-area {
+  0% {
+     background-color: #dfdfdf;
+  }
+  50% {
+    background-color: #bbb;
+  }
+  100% {
+    background-color: #dfdfdf;
+  }
+}
+@keyframes screen-shade {
+  0% {
+    background-position: -20px 0px;
+  }
+  5% {
+    background-position: -40px 0px;
+  }
+  20% {
+    background-position: 200px 0;
+  }
+  50% {
+    background-position: -200px 0;
+  }
+  80% {
+    background-position: 0px 0px;
+  }
+  85% {
+    background-position: -30px 0;
+  }
+  90% {
+    background-position: -20px 0;
+  }
+  100% {
+    background-position: -20px 0px;
+  }
+}
+@keyframes keys {
+  0% {
+    box-shadow: 0 -2px 0 #222;
+  }
+  5% {
+    box-shadow: 1 -1px 0 #222;
+  }
+  20% {
+    box-shadow: -1px 1px 0 #222;
+  }
+  25% {
+    box-shadow: -1px 1px 0 #222;
+  }
+  60% {
+    box-shadow: -1px 1px 0 #222;
+  }
+  80% {
+    box-shadow: 0 -2px 0 #222;
+  }
+  85% {
+    box-shadow: 0 -2px 0 #222;
+  }
+  87% {
+    box-shadow: 0 -2px 0 #222;
+  }
+  100% {
+    box-shadow: 0 -2px 0 #222;
+  }
+}
+@keyframes shadow {
+  0% {
+    transform: rotateX(80deg) rotateY(0deg) rotateZ(0deg);
+    box-shadow: 0 0 60px 40px rgba(0,0,0,0.3);
+  }
+  5% {
+    transform: rotateX(80deg) rotateY(10deg) rotateZ(0deg);
+    box-shadow: 0 0 60px 40px rgba(0,0,0,0.3);
+  }
+  20% {
+    transform: rotateX(30deg) rotateY(-20deg) rotateZ(-20deg);
+    box-shadow: 0 0 50px 30px rgba(0,0,0,0.3);
+  }
+  25% {
+    transform: rotateX(80deg) rotateY(-20deg) rotateZ(50deg);
+    box-shadow: 0 0 35px 15px rgba(0,0,0,0.1);
+  }
+  60% {
+    transform: rotateX(80deg) rotateY(0deg) rotateZ(-50deg) translateX(30px);
+    box-shadow: 0 0 60px 40px rgba(0,0,0,0.3);
+  }
+  100% {
+    box-shadow: 0 0 60px 40px rgba(0,0,0,0.3);
+  }
+}
+    body {
+    font-family: 'Helvetica', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #E6F7FF; /* Soft blue for a calm mood */
+    color: #333;
+}
+
+    /* Container */
+    .container {
+        max-width: 800px;
+        padding: 20px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    /* Heading */
+    h1 {
+        font-size: 18px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    /* Form styling */
+    form {
+        margin: 0;
+    }
+
+    label {
+        font-size: 1.2em;
+        font-weight: 600;
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    input[type="text"], textarea {
+        width: 95%;
+        padding: 12px;
+        margin: 8px 0;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 1em;
+    }
+
+    input[type="submit"] {
+        background-color: #00a2ff;
+        color: white;
+        padding: 14px 20px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 1.2em;
+        margin-top: 20px;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #00a2ff;
+    }
+
+    input[type="text"]:focus, textarea:focus {
+            box-shadow: 0 0 5px #00a2ff;
+            border: 1px solid #00a2ff;
+        }
+        input[type="text"], textarea {
+            transition: all 0.3s ease;
+        }
+
+    /* Generated text area */
+    h2 {
+        font-size: 2em;
+        margin-top: 20px;
+        
+    }
+
+    textarea#generated-text {
+        height: 200px;
+    }
+
+    .animated-title {
+    animation: fadeIn 2s;
+}
+
+.animated-form {
+    animation: slideUp 1.5s ease-out;
+}
+
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.info-container {
+    position: relative;
+    display: inline-block;
+}
+
+.info-icon {
+    background-color: transparent;
+    border: 2px solid #00a2ff;
+    color: #00a2ff;
+    padding: 5px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    font-size: 10px;
+}
+
+.info-icon:hover {
+    background-color: #00a2ff;
+    color: #fff;
+}
+
+.generate-button {
+    background: linear-gradient(90deg, rgba(0, 162, 255, 1) 0%, rgba(9, 9, 121, 1) 100%);
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 10px 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow: 0px 10px 15px rgba(0, 162, 255, 0.2);
+}
+
+.generate-button:hover {
+    background: linear-gradient(90deg, rgba(9, 9, 121, 1) 0%, rgba(0, 162, 255, 1) 100%);
+    box-shadow: 0px 10px 15px rgba(9, 9, 121, 0.2);
+    transform: translateY(-3px);
+}
+
+.generate-button:active {
+    transform: translateY(1px);
+}
+
+
+
+
+.tooltip {
+    visibility: hidden;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;  /* Center the tooltip */
+    transform: translate(-46%, -100%);  /* Translate to appear above */
+    bottom: calc(100% + -130px);  /* Position it above the button */
+    opacity: 0;
+    width: 300px; /* You can adjust the width as needed */
+    transition: opacity 0.3s;
+}
+
+h3 {
+    text-align: center;
+    color: black;  /* Subdued color */
+    font-size: 1em;  /* Smaller font size */
+    font-family: 'Times New Roman', serif;  /* A more elegant font */
+    margin-top: 5px;  /* Reduced margin */
+    margin-bottom: 20px;
+}
+
+
+/* Style for the 'Copy Generated Text' button */
+.copy-button {
+    background-color: transparent;  /* No background */
+    border: 2px solid #00a2ff;  /* Blue border */
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #00a2ff;  /* Blue text */
+    transition: 0.3s ease;  /* Smooth transition */
+}
+
+.copy-button:hover {
+    background-color: #00a2ff;  /* Blue background on hover */
+    color: #fff;  /* White text on hover */
+}
+
+
+/* Style for the 'Clear All' button */
+.clear-button {
+    background-color: transparent;  /* No background */
+    border: 2px solid #ff4d4d;  /* Red border */
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #ff4d4d;  /* Red text */
+    transition: 0.3s ease;  /* Smooth transition */
+}
+
+.clear-button:hover {
+    background-color: #ff4d4d;  /* Red background on hover */
+    color: #fff;  /* White text on hover */
+}
+
+/* Button container to align button to the right */
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* New Style */
+.heading-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+
+        .main-container {
+            display: flex;
+            justify-content: center;  
+            align-items: flex-start;  
+            padding: 20px;
+        }
+
+        .wrapper {
+            display: flex;
+            align-items: flex-start;  /* Align items to the top */
+        }
+
+        /* Content container */
+        .content-container {
+            width: 800px;
+        }
+     /* Contact container */
+     .contact-container {
+            flex-shrink: 0;
+            
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            text-align: center;
+            margin-left: 20px;  /* Add left margin for spacing */
+        }
+        .contact-container h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .contact-container ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .contact-container ul li {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+
+        .contact-container ul li a {
+            color: #00a2ff;
+            text-decoration: none;
+        }
+
+        .contact-container ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .close-tooltip {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: #00a2ff;  /* Light blue */
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 5px 8px;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 50%;
+}
+
+#website-header {
+            font-family: Arial, sans-serif; /* Use a normal font */
+            font-size: 2em; /* You can adjust the font size */
+            text-align: center; /* Centered text */
+            margin-top: 10px;
+            margin-bottom: 20px;
+            font-weight: bold; /* Make the title bold */
+        }
+
+.fancy-header {
+    position: relative;
+    text-align: center;
+    font-family:Arial, sans-serif; /* Use a fancy font */
+    font-size: 2em;
+}
+
+.fancy-header::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    width: 200px;
+    height: 2px;
+    background: radial-gradient(circle, transparent 1px, black 1px);
+    background-size: 10px 10px;
+    background-position: 0 0;
+    transform: translateX(-50%);
+}
+
+.special-heading {
+    background: linear-gradient(90deg, rgba(0, 162, 255, 1) 0%, rgba(9, 9, 121, 1) 100%);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+
+        /* Media Query for Tablets and Mobiles */
+@media screen and (max-width: 1024px) {
+    .wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+    .content-container, .contact-container {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .contact-container {
+        margin-left: 0;  /* Remove left margin */
+    }
+}
+/* Add a media query for screens smaller than 480 pixels */
+@media screen and (max-width: 480px) {
+    /* Overriding the container width to be 100% */
+    .container, .content-container, .contact-container {
+        max-width: 100%;
+    }
+
+    /* Remove any fixed padding or margin that might cause overflow */
+    .container, .content-container, .contact-container {
+        padding: 10px;
+        margin: 0;
+    }
+
+   
+}
+
+
+
+</style>
+    <script>
+     document.addEventListener("DOMContentLoaded", function() {
+            const form = document.getElementById("generator-form");
+            const userPrompt = document.getElementById("user-prompt");
+            const userRules = document.getElementById("user-rules");
+            const generatedText = document.getElementById("generated-text");
+            const clearAllButton = document.getElementById("clear-all");
+            const infoIcon = document.querySelector('.info-icon');
+            const tooltip = document.querySelector('.tooltip');
+            const userPromptCountElement = document.getElementById("user-prompt-count");
+            const userRulesCountElement = document.getElementById("user-rules-count");
+            const closeTooltipButton = document.getElementById("close-tooltip");
+
+
+        
+
+// Function to update character count display
+function updateCharacterCount(inputElement, countElement, maxCount) {
+    const count = inputElement.value.length;
+    countElement.textContent = `${count}/${maxCount} characters`;
+    if (count > maxCount) {
+        countElement.style.color = "red";
+    } else {
+        countElement.style.color = "gray";
+    }
+}
+
+// Add an event listener to the "Close" button
+closeTooltipButton.addEventListener("click", function(event) {
+    event.preventDefault();  // Prevent any default behavior
+    event.stopPropagation();  // Prevent this event from triggering any outer events
+    hideTooltip();  // Call your existing function to hide the tooltip
+});
+
+// Monitor the character count for user-prompt and prevent excess characters
+userPrompt.addEventListener("input", function() {
+    updateCharacterCount(userPrompt, userPromptCountElement, 500);
+    if (userPrompt.value.length > 500) {
+        userPrompt.value = userPrompt.value.substring(0, 500);
+    }
+});
+
+// Monitor the character count for user-rules and prevent excess characters
+userRules.addEventListener("input", function() {
+    updateCharacterCount(userRules, userRulesCountElement, 2000);
+    if (userRules.value.length > 2000) {
+        userRules.value = userRules.value.substring(0, 2000);
+    }
+});
+
+// Check character count before submitting
+form.addEventListener("submit", async function(event) {
+    event.preventDefault(); // Prevent default action
+    generatedText.value = "";
+
+    // Check if character limits are exceeded
+    if (userPrompt.value.length > 500 || userRules.value.length > 2000) {
+        alert("You have exceeded the character limit. Please shorten your text.");
+        return false; // Stop form submission
+    }
+
+    // Show the loading indicator
+    document.getElementById("loading-indicator").style.display = "block";
+
+    const prompt = userPrompt.value;
+    const rules = userRules.value;
+
+    try {
+        const response = await fetch('http://localhost:3002/generate', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                prompt,
+                rules
+            })
+        });
+
+        const result = await response.json();
+if (result.status === "rate_limit_exceeded") {
+    document.getElementById("rate-limit-message").innerText = result.message + " " + result.info;
+    
+    // Calculate the time remaining until the rate limit resets
+    const rateResetTime = new Date(result.rateResetTime);
+    const currentTime = new Date();
+    const timeDifference = rateResetTime - currentTime;
+    
+    // Set a timer to hide the message when the rate limit resets
+    setTimeout(() => {
+        document.getElementById("rate-limit-message").innerText = "";
+    }, timeDifference);
+
+        } else if (result && result.generatedText) {
+            generatedText.value = result.generatedText;
+        }
+    } catch (error) {
+        console.error("An error occurred:", error);
+    }
+
+    // Hide the loading indicator
+    document.getElementById("loading-indicator").style.display = "none";
+});
+
+// Load saved data from localStorage
+userPrompt.value = localStorage.getItem("userPrompt") || "";
+userRules.value = localStorage.getItem("userRules") || "";
+generatedText.value = localStorage.getItem("generatedText") || "";
+
+// Save data to localStorage
+[userPrompt, userRules, generatedText].forEach((element) => {
+    element.addEventListener("input", function() {
+        console.log(`Setting ${element.id} to ${element.value}`);
+        localStorage.setItem(element.id, element.value);
+    });
+});
+
+
+
+// Clear all text fields and localStorage
+clearAllButton.addEventListener("click", function() {
+    userPrompt.value = "";
+    userRules.value = "";
+    generatedText.value = "";
+    localStorage.clear();
+    
+    // Explicitly reset character counts
+    updateCharacterCount(userPrompt, userPromptCountElement, 500);
+    updateCharacterCount(userRules, userRulesCountElement, 2000);
+});
+
+       
+
+// Initialize character counts
+updateCharacterCount(userPrompt, userPromptCountElement, 500);
+updateCharacterCount(userRules, userRulesCountElement, 2000);
+
+            // Function to hide tooltip
+            function hideTooltip() {
+                tooltip.style.visibility = 'hidden';
+                tooltip.style.opacity = 0;
+            }
+
+            // Function to show tooltip
+            function showTooltip() {
+                tooltip.style.visibility = 'visible';
+                tooltip.style.opacity = 1;
+            }
+
+              
+         
+
+            // Updated event listener for info icon
+            infoIcon.addEventListener('click', function(event) {
+                event.stopPropagation(); // Prevent this event from triggering any outer events
+                showTooltip();
+            });
+
+            // Event listener to close tooltip when clicking outside
+            // document.addEventListener('click', function(event) {
+               // if (!tooltip.contains(event.target) && event.target !== infoIcon) {
+                //    hideTooltip();
+               // }
+           // });
+
+            // Event listener to keep tooltip when clicking inside it
+            tooltip.addEventListener('click', function(event) {
+                event.stopPropagation();
+            });
+
+            // Get the "Copy" button element by its ID
+const copyButton = document.getElementById("copy-button");
+
+// Add an event listener to the "Copy" button
+copyButton.addEventListener("click", function() {
+    // Select the content of the generatedText textarea
+    generatedText.select();
+    generatedText.setSelectionRange(0, 99999); // For mobile devices
+
+    // Copy the selected text to the clipboard
+    document.execCommand("copy");
+
+    // Optionally, display a message to indicate that the text has been copied
+    alert("Text copied to clipboard!");
+});
+
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+  setTimeout(function() {
+    document.getElementById("loader").style.display = "none";
+    document.getElementById("app-content").style.display = "block";
+  }, 5000);  // 5 seconds
+});
+
+    </script>
+</head>
+<body>
+    <div class="main-container">
+        
+        <div class="center-container"> 
+            <div class="wrapper">
+                <div class="content-container">
+            <div class="container">
+                <div id="website-header" class="fancy-header">MirrorMeGPT</div>
+
+                <div>
+                <h1>An Undetectable AI That Writes Just Like You — 
+                    <br>
+                    Literally</h1>
+                </div>
+                <h3 class="special-heading">100% Human Score.</h3>
+
+                <hr> 
+                <form id="generator-form" class="animated-form">
+                    <label for="user-prompt">What would you like to write about? Specify the format (e.g., essay, poem, article, etc.)</label>
+                    <input type="text" id="user-prompt" name="user-prompt" autocomplete="off" maxlength="2000">
+                    <span id="user-prompt-count" style="color: rgb(121, 93, 93);">0/500 characters</span>
+                    <label for="user-rules">Enter additional rules or previous writings:</label>
+                    <span class="info-icon">*IMPORTANT: HOW TO USE* Info</span>
+                    <textarea id="user-rules" name="user-rules" autocomplete="off" maxlength="6000"></textarea>
+                    <span id="user-rules-count" style="color: gray;">0/2000 characters</span>
+                    <div class="info-container">
+                        <div class="tooltip">
+                            <button id="close-tooltip" class="close-tooltip">X</button>
+                            <h3>How to Use</h3>
+                            <p>Start with "Please write in a manner that is consistent with the tone and style demonstrated in the following sample text " (Here, you can insert a previous essay or writing assignment as a sample.)</p>
+                            <p>Additionally, you may include specific guidelines, such as "Use vocabulary appropriate for a high school student" (or college student, graduate student, etc.).</p>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="submit" value="Generate Text" class="generate-button">
+                    </div>
+                </form>
+                <div class="generate-section">
+                    <div class="button-container">
+   
+    
+   
+  
+        
+        
+                    </div>
+                    <div class="heading-container">
+                        <h2 class="animated-title inline-heading">Generated Text:</h2>
+                        <button id="copy-button" class="button copy-button">Copy Generated Text</button>
+                      
+                    </div>
+                    <div>
+                        <div id="rate-limit-message" style="color: red;"></div>
+                    </div>
+                    <div>
+                        <div id="loading-indicator" style="display: none;">Generating...(10-30 seconds)</div>
+                    </div>
+                    <textarea id="generated-text" contenteditable="true" autocomplete="off"></textarea>
+
+
+                </div>
+                <button id="clear-all" class="button clear-button">Clear All</button>
+            </div>
+        </div>
+        <div class="contact-container">
+            <h3>Connect With Me 🤝</h3>
+            <p>For any inquiries or questions, feel free to reach out:</p>
+            <ul>
+                <li>
+                    📸 <a href="https://instagram.com/kylewayland_" target="_blank">Instagram: @kylewayland_</a>
+                </li>
+                <li>
+                    📧 Email: <a href="mailto:kylelambo20@gmail.com">kylelambo20@gmail.com</a>
+                </li>
+                <li>
+                    🌐 <a href="https://www.linkedin.com/in/kyle-wayland-6a0b8a26a/" target="_blank">LinkedIn: Kyle Wayland</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+    
+</body>
+</html>
+
+
+
+<!-- CSS macbook loader credits -->
+<!-- Burak Can -->

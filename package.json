@@ -1,0 +1,21 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"npm run server\"",
+    "server": "cd backend && node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^6.5.1"
+  },
+  "dependencies": {
+    "express-rate-limit": "^6.10.0",
+    "sharp": "^0.32.5",
+    "stegcloak": "^1.1.1"
+  }
+}
