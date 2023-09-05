@@ -17,6 +17,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "express-rate-limit": "^6.10.0",
+    "node-fetch": "^3.3.2",
     "sharp": "^0.32.5",
     "stegcloak": "^1.1.1"
   }
