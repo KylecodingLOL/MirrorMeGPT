@@ -30,11 +30,11 @@ const apiLimiter = rateLimit({
 });
 
 // Apply the rate-limiting middleware to all routes
-app.use(apiLimiter);
-
-
-
 app.use("/generate", apiLimiter);
+
+
+
+
 app.use(express.json());
 app.use(cors({
     origin: 'https://www.mirrormegpt.com',
