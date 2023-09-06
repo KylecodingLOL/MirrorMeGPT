@@ -926,7 +926,7 @@ form.addEventListener("submit", async function(event) {
     const rules = userRules.value;
 
     try {
-      const response = await fetch('https://mirrormegpt-45298feb339b.herokuap/generate', {
+      const response = await fetch('https://mirrormegpt-45298feb339b.herokuapp.com/generate', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -1067,8 +1067,7 @@ copyButton.addEventListener("click", function() {
                 <div>
                 <h1>An Undetectable AI That Writes Just Like You — Literally</h1>
                 </div>
-                <h3 class="special-heading">100% Human Score.</h3>
-                <h1>***UNDER MAINTENANCE***(you cnannot generate text at this time)</h1>
+                <h3 class="special-heading">100% Human Score.</h3>   
                 <hr> 
                 <form id="generator-form" class="animated-form">
                     <label for="user-prompt">What would you like to write about? Specify the format (e.g., essay, poem, article, etc.)</label>

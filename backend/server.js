@@ -76,11 +76,15 @@ app.post('/generate', async (req, res) => {
     // Format the generated text to alternate between Four-Per-Em Space and regular space
     let newContent = '';
     let useSpecialSpace = true;  // Flag to alternate between special and regular space
+    let useSpecialA = true;  // Flag to alternate between regular 'a' and Cyrillic 'а'
 
     for (let i = 0; i < content.length; i++) {
         if (content[i] === ' ') {
             newContent += useSpecialSpace ? '\u2004' : ' ';
             useSpecialSpace = !useSpecialSpace;  // Toggle the flag
+        } else if (content[i].toLowerCase() === 'a') {  // Check for 'a' or 'A'
+            newContent += useSpecialA ? 'а' : 'a';  // Use Cyrillic 'а' if flag is true
+            useSpecialA = !useSpecialA;  // Toggle the flag
         } else {
             newContent += content[i];
         }
@@ -90,6 +94,8 @@ app.post('/generate', async (req, res) => {
 
     res.json({ generatedText: content });
 });
+
+
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 });
