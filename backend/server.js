@@ -23,6 +23,9 @@ const apiLimiter = rateLimit({
         });
     },
     headers: true,
+    skip: function (req, res) {
+        return req.method === 'OPTIONS';
+    }
 });
 
 // Apply the rate-limiting middleware to all routes
@@ -32,7 +35,7 @@ app.use(apiLimiter);
 
 app.use("/generate", apiLimiter);
 app.use(express.json());
-app.use(cors());
+app.use(cors({ origin: 'https://www.mirrormegpt.com' }));
 app.use(express.static('../frontend'));
 
 app.get('/', (req, res) => {
