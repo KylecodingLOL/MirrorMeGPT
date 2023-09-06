@@ -12,7 +12,7 @@ const port = process.env.PORT || 3002;
 app.set('trust proxy', 1);
 const apiLimiter = rateLimit({
     windowMs: 10 * 60 * 1000, // 10 minutes
-    max: 22, // limit each IP to 10 requests per windowMs
+    max: 22, // TEMP FIX (my application will stop at 10 still idk why i have to set this to 22 for it to happen though. if this is set to 10 it only allows 4 requests)
     handler: function (req, res) {
         const rateResetTime = req.rateLimit.resetTime ? new Date(req.rateLimit.resetTime).toISOString() : null;
 
