@@ -927,6 +927,7 @@ form.addEventListener("submit", async function(event) {
 
     try {
       const response = await fetch('https://mirrormegpt-45298feb339b.herokuapp.com/generate', {
+            mode: 'cors',
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

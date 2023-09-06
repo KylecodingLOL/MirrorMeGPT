@@ -35,7 +35,12 @@ app.use(apiLimiter);
 
 app.use("/generate", apiLimiter);
 app.use(express.json());
-app.use(cors({ origin: 'https://www.mirrormegpt.com' }));
+app.use(cors({
+    origin: 'https://www.mirrormegpt.com',
+    methods: ['GET', 'POST'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+}));
+
 app.use(express.static('../frontend'));
 
 app.get('/', (req, res) => {
