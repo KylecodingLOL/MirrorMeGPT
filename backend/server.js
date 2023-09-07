@@ -86,19 +86,23 @@ app.post('/generate', async (req, res) => {
     let newContent = '';
     let useSpecialSpace = true;  // Flag to alternate between special and regular space
     let useSpecialA = true;  // Flag to alternate between regular 'a' and Cyrillic 'а'
+    let useSpecialO = true;  // Flag to alternate between regular 'o' and Greek 'ο'
 
     for (let i = 0; i < content.length; i++) {
         if (content[i] === ' ') {
             newContent += useSpecialSpace ? '\u2004' : ' ';
             useSpecialSpace = !useSpecialSpace;  // Toggle the flag
-        } else if (content[i].toLowerCase() === 'a') {  // Check for 'a' or 'A'
-            newContent += useSpecialA ? 'а' : 'a';  // Use Cyrillic 'а' if flag is true
+        } else if (content[i].toLowerCase() === 'a') {  
+            newContent += useSpecialA ? 'а' : 'a';  
             useSpecialA = !useSpecialA;  // Toggle the flag
+        } else if (content[i].toLowerCase() === 'o') {  
+            newContent += useSpecialO ? 'ο' : 'o';  
+            useSpecialO = !useSpecialO;  // Toggle the flag
         } else {
             newContent += content[i];
         }
     }
-
+    
     content = newContent;
 
     res.json({ generatedText: content });
