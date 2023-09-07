@@ -48,9 +48,6 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../frontend/index.html'));
 });
 
-app.get('/favicon.ico', (req, res) => {
-    res.sendFile(path.join(__dirname, '../frontend/7ec0e4c68d2fab12a636736341389906.ico'));
-});
 
 
 app.post('/generate', async (req, res) => {
