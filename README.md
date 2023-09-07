@@ -1,2 +1,4 @@
 # MirrorMeGPT
-# MIT
+
+## License
+ MIT
