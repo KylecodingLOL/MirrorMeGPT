@@ -32,9 +32,6 @@ const apiLimiter = rateLimit({
 // Apply the rate-limiting middleware to all routes
 app.use("/generate", apiLimiter);
 
-app.get('/favicon.ico', (req, res) => {
-    res.sendFile(path.join(__dirname, '../7ec0e4c68d2fab12a636736341389906.ico'));
-});
 
 
 
